@@ -1,4 +1,4 @@
-module github.com/champ-oss/terraform-module-template
+module github.com/champ-oss/terraform-aws-ecr-cache
 
 go 1.17
 
