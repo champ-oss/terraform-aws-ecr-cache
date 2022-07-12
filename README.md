@@ -1,6 +1,6 @@
 # terraform-aws-ecr-cache
 
-Summary: terraform module to manage Amazon Elastic Container Registry and sync from another docker repository
+Summary: Terraform module to manage Amazon Elastic Container Registry and sync from another docker repository
 
 ![ci](https://github.com/conventional-changelog/standard-version/workflows/ci/badge.svg)
 [![version](https://img.shields.io/badge/version-1.x-yellow.svg)](https://semver.org)
