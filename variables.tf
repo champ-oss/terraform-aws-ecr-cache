@@ -50,3 +50,9 @@ variable "sync_sleep_seconds" {
   type        = number
   default     = 10
 }
+
+variable "force_delete" {
+  description = "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecr_repository#force_delete"
+  type        = bool
+  default     = false
+}

@@ -8,6 +8,7 @@ module "this" {
   name             = "terraform-aws-ecr-cache/ubuntu-test"
   sync_source_repo = "ubuntu"
   sync_source_tag  = "latest"
+  force_delete     = true
 }
 
 # Verify the image and tag exist in ECR
