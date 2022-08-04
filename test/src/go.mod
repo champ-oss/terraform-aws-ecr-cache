@@ -2,7 +2,7 @@ module github.com/champ-oss/terraform-aws-ecr-cache
 
 go 1.17
 
-require github.com/gruntwork-io/terratest v0.40.17
+require github.com/gruntwork-io/terratest v0.40.19
 
 require (
 	cloud.google.com/go v0.83.0 // indirect
