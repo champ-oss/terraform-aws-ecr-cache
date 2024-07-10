@@ -9,8 +9,19 @@ locals {
 data "aws_region" "this" {
   count = var.enabled ? 1 : 0
 }
+
+moved {
+  from = data.aws_region.this
+  to   = data.aws_region.this[0]
+}
+
 data "aws_caller_identity" "this" {
   count = var.enabled ? 1 : 0
+}
+
+moved {
+  from = data.aws_caller_identity.this
+  to   = data.aws_caller_identity.this[0]
 }
 
 resource "aws_ecr_repository" "this" {
@@ -23,6 +34,11 @@ resource "aws_ecr_repository" "this" {
   encryption_configuration {
     encryption_type = var.encryption_type
   }
+}
+
+moved {
+  from = aws_ecr_repository.this
+  to   = aws_ecr_repository.this[0]
 }
 
 resource "null_resource" "sync_image_to_ecr" {
@@ -48,4 +64,9 @@ resource "null_resource" "sync_image_to_ecr" {
       ECR_NAME    = aws_ecr_repository.this[0].name
     }
   }
+}
+
+moved {
+  from = null_resource.sync_image_to_ecr
+  to   = null_resource.sync_image_to_ecr[0]
 }
