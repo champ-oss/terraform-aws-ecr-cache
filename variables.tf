@@ -62,3 +62,10 @@ variable "enabled" {
   type        = bool
   default     = true
 }
+
+variable "scan_on_push" {
+  description = "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecr_repository#argument-reference"
+  type        = bool
+  default     = true
+} 
+ 

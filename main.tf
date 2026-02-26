@@ -34,6 +34,17 @@ resource "aws_ecr_repository" "this" {
   encryption_configuration {
     encryption_type = var.encryption_type
   }
+  
+  image_scanning_configuration {
+    scan_on_push = var.scan_on_push
+  }
+
+  lifecycle {
+    ignore_changes = [
+      #  ignore kms repos that were manually created and can't be migrated without destroy
+      encryption_configuration["encryption_type"]
+    ]
+  }
 }
 
 moved {
